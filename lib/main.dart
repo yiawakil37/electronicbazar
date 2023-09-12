@@ -66,8 +66,12 @@ class _mySplashPageState extends State<mySplashPage> {
                     fixedSize: const Size(180, 40),
                   ),
                   onPressed: () {
-                    Navigator.pushAndRemoveUntil(context,homePage.idScreen , (route) => false);
-                  },
+                    Navigator.push(context,
+                    MaterialPageRoute(
+                        builder: (context) => homePage()
+                    )
+                    );
+                    },
                   child: Text("Skip"),
               )
             ],
@@ -77,8 +81,8 @@ class _mySplashPageState extends State<mySplashPage> {
     );
   }
 
-  final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
-  void loginUser(BuildContext context) async{
+  //final FirebaseAuth _firebaseAuth = FirebaseAuth.instance;
+  /*void loginUser(BuildContext context) async{
 
     try {
       final userCredential = await _auth.signInWithEmailAndPassword(
@@ -143,6 +147,6 @@ class _mySplashPageState extends State<mySplashPage> {
     //   displayToastMessage("Error Occurred, can not be signed in", context);
     // }
 
-  }
+  }*/
 
 }
